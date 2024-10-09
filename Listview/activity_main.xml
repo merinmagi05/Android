@@ -8,43 +8,44 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/t1"
+        android:id="@+id/tv1"
+        android:layout_width="113dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="149dp"
+        android:text="Account"
+        android:textColor="#2054D5"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="317dp"
-        android:text="WELCOME"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="269dp"
+        android:text="welcome"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/l1"
-        android:layout_width="0dp"
-        android:layout_height="530dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t1" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="81dp"
-        android:layout_marginEnd="173dp"
-        android:text="ACCOUNT"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:id="@+id/listview"
+        android:layout_width="363dp"
+        android:layout_height="471dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="48dp"
+        android:onClick="listview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
