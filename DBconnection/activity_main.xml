@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="update"
     tools:context=".MainActivity">
 
     <TextView
@@ -69,14 +70,12 @@
         android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
         android:onClick="SaveData"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Save"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et3" />
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
     <EditText
         android:id="@+id/et3"
@@ -92,14 +91,48 @@
         app:layout_constraintTop_toBottomOf="@+id/et2" />
 
     <TextView
-        android:id="@+id/DataV"
+        android:id="@+id/dv"
         android:layout_width="300dp"
         android:layout_height="189dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="51dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b1" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="72dp"
+        android:onClick="read"
+        android:text="read"
+        app:layout_constraintStart_toEndOf="@+id/b1"
+        app:layout_constraintTop_toBottomOf="@+id/et3" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:onClick="delete"
+        android:text="delete"
+        app:layout_constraintStart_toEndOf="@+id/b2"
+        app:layout_constraintTop_toBottomOf="@+id/et3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="update"
+        android:text="update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/b3"
+        app:layout_constraintTop_toBottomOf="@+id/et3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
