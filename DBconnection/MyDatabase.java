@@ -8,7 +8,9 @@ import android.database.Cursor;
 
 
 public class MyDatabase extends SQLiteOpenHelper {
+
     public MyDatabase(Context context){
+
         super(context,"Login.db",null,1);
     }
     @Override
@@ -29,18 +31,35 @@ public class MyDatabase extends SQLiteOpenHelper {
     }
       public Boolean insertdata(String userVal, Integer passVal, String surnameVal) {
         SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
-        contentValues.put("NAME",userVal);
-        contentValues.put("SURNAME",surnameVal);
-        contentValues.put("MARKS",passVal);
-        long result=db.insert("USERS",null,contentValues);
+
+        ContentValues cv=new ContentValues();
+        cv.put("NAME",userVal);
+        cv.put("SURNAME",surnameVal);
+        cv.put("MARKS",passVal);
+        long result=db.insert("USERS",null,cv);
         db.close();
-        if(result==-1){
-            return false;
-        }
-        else{
+        return result != -1;
+
+    }
+    public int deletedata(String userVal){
+        SQLiteDatabase db=this.getWritableDatabase();
+        int i= db.delete("USERS","NAME=?",new String[]{userVal});
+        db.close();
+        return i;
+
+    }
+    public Boolean updateData(String userVal,Integer passVal,String surnameVal){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put("NAME",userVal);
+        cv.put("SURNAME",surnameVal);
+        cv.put("MARKS",passVal);
+        int result=db.update("USERS",cv,"NAME=?",new String[]{userVal});
+        if(result>0){
             return true;
         }
-
+        else{
+            return false;
+        }
     }
 }
