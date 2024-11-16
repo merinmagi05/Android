@@ -43,9 +43,9 @@ public class MyDatabase extends SQLiteOpenHelper {
     }
     public int deletedata(String userVal){
         SQLiteDatabase db=this.getWritableDatabase();
-        int i= db.delete("USERS","NAME=?",new String[]{userVal});
+        int result= db.delete("USERS","NAME=?",new String[]{userVal});
         db.close();
-        return i;
+        return result;
 
     }
     public Boolean updateData(String userVal,Integer passVal,String surnameVal){
