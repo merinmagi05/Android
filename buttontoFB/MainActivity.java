@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void b1(View view) {
-        Intent browserIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/login"));
-        startActivity(browserIntent);
+        Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/login"));
+        startActivity(intent);
 
     }
 }
