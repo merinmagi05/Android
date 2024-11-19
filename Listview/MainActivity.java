@@ -24,23 +24,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         //taking text 2
-        t2=(TextView)findViewById(R.id.tv2);
+        t2=findViewById(R.id.tv2);
 
         //welcome message through an intent
         String msg=getIntent().getStringExtra("mykey");
         t2.setText("Welcome"+msg);
-        lv1=(ListView)findViewById(R.id.listview);
-        //Adding listview names to an array
+        
+        lv1=findViewById(R.id.listview);
         String[] courses={"MCA","MBA","BCA","BBA"};
-        //storing to the List using ArrayAdapter
         ArrayAdapter ad=new ArrayAdapter(this,android.R.layout.simple_list_item_1,courses);
         lv1.setAdapter(ad);
         lv1.setOnItemClickListener(this);
-
-
-
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -48,8 +42,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             return insets;
         });
     }
-
-
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
